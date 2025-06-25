@@ -1,3 +1,1 @@
-#!/bin/bash
-export JAVA_HOME=/opt/render/project/.jdk
-./mvnw clean package
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk && ./mvnw clean package
