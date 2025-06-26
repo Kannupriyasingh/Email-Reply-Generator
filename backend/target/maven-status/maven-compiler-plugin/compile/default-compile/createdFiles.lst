@@ -1,5 +1,7 @@
 com/example/service/EmailGeneratorService.class
 com/example/App.class
+com/example/domain/EmailReplyData.class
 com/example/config/GeminiConfig.class
 com/example/controller/EmailGeneratorController.class
+com/example/service/DataBaseQuery.class
 com/example/dto/EmailRequest.class

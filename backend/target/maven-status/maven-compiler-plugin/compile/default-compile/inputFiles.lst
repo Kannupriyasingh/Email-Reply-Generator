@@ -1,5 +1,7 @@
-/Users/kannupriya/Desktop/Projects For Resume/emailresponsegenerator/src/main/java/com/example/dto/EmailRequest.java
-/Users/kannupriya/Desktop/Projects For Resume/emailresponsegenerator/src/main/java/com/example/controller/EmailGeneratorController.java
-/Users/kannupriya/Desktop/Projects For Resume/emailresponsegenerator/src/main/java/com/example/App.java
-/Users/kannupriya/Desktop/Projects For Resume/emailresponsegenerator/src/main/java/com/example/config/GeminiConfig.java
-/Users/kannupriya/Desktop/Projects For Resume/emailresponsegenerator/src/main/java/com/example/service/EmailGeneratorService.java
+/Users/kannupriya/Desktop/Projects For Resume/Email-Reply-Generator/backend/src/main/java/com/example/App.java
+/Users/kannupriya/Desktop/Projects For Resume/Email-Reply-Generator/backend/src/main/java/com/example/dto/EmailRequest.java
+/Users/kannupriya/Desktop/Projects For Resume/Email-Reply-Generator/backend/src/main/java/com/example/controller/EmailGeneratorController.java
+/Users/kannupriya/Desktop/Projects For Resume/Email-Reply-Generator/backend/src/main/java/com/example/service/EmailGeneratorService.java
+/Users/kannupriya/Desktop/Projects For Resume/Email-Reply-Generator/backend/src/main/java/com/example/service/DataBaseQuery.java
+/Users/kannupriya/Desktop/Projects For Resume/Email-Reply-Generator/backend/src/main/java/com/example/domain/EmailReplyData.java
+/Users/kannupriya/Desktop/Projects For Resume/Email-Reply-Generator/backend/src/main/java/com/example/config/GeminiConfig.java
