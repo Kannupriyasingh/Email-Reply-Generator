@@ -9,14 +9,21 @@ import com.example.dto.EmailRequest;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.example.config.GeminiConfig;
+import com.example.domain.EmailReplyData;
+
 import java.util.Map;
 
+
+// https://email-reply-generator-three.vercel.app/
 
 @Service
 public class EmailGeneratorService {
 
     @Autowired
     public GeminiConfig geminiConfig;
+
+    @Autowired
+    public DataBaseQuery dataBaseQuery;
 
     private final WebClient webClient;   // Its alternative of RestTemplate
     /*
@@ -44,6 +51,7 @@ public class EmailGeneratorService {
 
     public String generateMailReply(EmailRequest emailRequest) {
 
+        // System.out.println("emailRequest::::::"+ emailRequest);
         // Build the prompt
         String prompt = buildPrompt(emailRequest);
 
@@ -91,8 +99,21 @@ public class EmailGeneratorService {
     
         // extract & return response
         // response is in json format so we need to extract the exact response
-        return extractResponseContent(response);
+
        
+        String reply = extractResponseContent(response);
+
+        // System.out.println("Email reply:::::" + reply);
+        // Adding data into database
+
+        EmailReplyData emailReplyData = new EmailReplyData();
+        emailReplyData.setContent(emailRequest.getEmailContent());
+        emailReplyData.setTone(emailRequest.getTone());
+        emailReplyData.setReply(reply);
+
+        dataBaseQuery.addData(emailReplyData);
+
+        return reply;
     }
 
     private String extractResponseContent(String response) {

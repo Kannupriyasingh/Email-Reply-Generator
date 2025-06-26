@@ -1,38 +1,41 @@
 package com.example;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import com.example.domain.EmailReplyData;
+import com.example.service.DataBaseQuery;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest  // tells Spring to load the full application context
+public class AppTest {
+
+    @Autowired
+    private DataBaseQuery dataBaseQuery;
+
+    @Test
+    public void insertTest() {
+        EmailReplyData emailReplyData = dataBaseQuery.addData(
+            new EmailReplyData(2, "hello Friends", "friendly", "hii buddy", null)
+        );
+        System.out.println(emailReplyData.getId() + " " + emailReplyData.getReply());
     }
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
+    @Test   
+    public void allData() {
+        dataBaseQuery.fetchAllData().forEach(data -> {
+            System.out.println(data.getReply());
+        });
     }
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
+    @Test
+    public void fetchById() {
+        EmailReplyData emailReplyData = dataBaseQuery.fetchById(1);
+        System.out.println(emailReplyData.getContent());
+    }
+
+    @Test
+    public void deleteById(){
+        dataBaseQuery.deleteData(1);
     }
 }
