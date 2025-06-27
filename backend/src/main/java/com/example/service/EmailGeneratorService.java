@@ -111,7 +111,7 @@ public class EmailGeneratorService {
         emailReplyData.setTone(emailRequest.getTone());
         emailReplyData.setReply(reply);
 
-        dataBaseQuery.addData(emailReplyData);
+        // dataBaseQuery.addData(emailReplyData);
 
         return reply;
     }
