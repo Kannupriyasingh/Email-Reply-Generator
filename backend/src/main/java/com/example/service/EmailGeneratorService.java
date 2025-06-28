@@ -9,7 +9,6 @@ import com.example.dto.EmailRequest;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.example.config.GeminiConfig;
-import com.example.domain.EmailReplyData;
 
 import java.util.Map;
 
@@ -21,9 +20,6 @@ public class EmailGeneratorService {
 
     @Autowired
     public GeminiConfig geminiConfig;
-
-    @Autowired
-    public DataBaseQuery dataBaseQuery;
 
     private final WebClient webClient;   // Its alternative of RestTemplate
     /*
@@ -104,15 +100,6 @@ public class EmailGeneratorService {
         String reply = extractResponseContent(response);
 
         // System.out.println("Email reply:::::" + reply);
-        // Adding data into database
-
-        EmailReplyData emailReplyData = new EmailReplyData();
-        emailReplyData.setContent(emailRequest.getEmailContent());
-        emailReplyData.setTone(emailRequest.getTone());
-        emailReplyData.setReply(reply);
-
-        dataBaseQuery.addData(emailReplyData);
-
         return reply;
     }
 
