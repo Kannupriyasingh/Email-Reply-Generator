@@ -11,8 +11,8 @@ import com.example.domain.EmailReplyData;
 @Service
 public class DataBaseQuery {
 
-    @Autowired
-    private JdbcClient jdbcClient;
+    // @Autowired
+    // private JdbcClient jdbcClient;
 
     // public EmailReplyData addData(EmailReplyData emailReplyData) {
 

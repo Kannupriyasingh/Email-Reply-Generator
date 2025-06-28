@@ -1,7 +1,7 @@
 package com.example;
 
 import com.example.domain.EmailReplyData;
-import com.example.service.DataBaseQuery;
+// import com.example.service.DataBaseQuery;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,8 +10,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest  // tells Spring to load the full application context
 public class AppTest {
 
-    @Autowired
-    private DataBaseQuery dataBaseQuery;
+    // @Autowired
+    // private DataBaseQuery dataBaseQuery;
 
     // @Test
     // public void insertTest() {

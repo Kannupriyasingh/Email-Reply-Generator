@@ -22,8 +22,8 @@ public class EmailGeneratorService {
     @Autowired
     public GeminiConfig geminiConfig;
 
-    @Autowired
-    public DataBaseQuery dataBaseQuery;
+    // @Autowired
+    // public DataBaseQuery dataBaseQuery;
 
     private final WebClient webClient;   // Its alternative of RestTemplate
     /*
